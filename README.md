@@ -15,7 +15,7 @@ make link
 To use run the EA named `Download` with the desired period, run the EA in the strategy tester with the following settings:
 
 - **Modelling** set to **Open prices only**.
-- **Date** set to **Custom period** (**1999.02.01** - present)
+- **Date** set to **Entire history**
 
 After running the EA, run the following command to copy the generated files into this repo.
 
