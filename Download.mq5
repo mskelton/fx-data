@@ -15,6 +15,9 @@
 #property strict
 #endif
 
+#define DIGITS 5
+#define SHIFT 1
+
 int file_handle;
 
 int OnInit() {
@@ -34,16 +37,16 @@ void OnTick() {
 
   // Convert the time to an ISO8601 string
   MqlDateTime time_struct;
-  TimeToStruct(iTime(sym, period, 0), time_struct);
+  TimeToStruct(iTime(sym, period, SHIFT), time_struct);
   string time = StringFormat("%04d-%02d-%02dT%02d:%02d:%02dZ", time_struct.year,
                              time_struct.mon, time_struct.day, time_struct.hour,
                              time_struct.min, time_struct.sec);
 
   // Get the OHLC values for the current bar
-  double open = iOpen(sym, period, 0);
-  double high = iHigh(sym, period, 0);
-  double low = iLow(sym, period, 0);
-  double close = iClose(sym, period, 0);
+  string open = DoubleToString(iOpen(sym, period, SHIFT), DIGITS);
+  string high = DoubleToString(iHigh(sym, period, SHIFT), DIGITS);
+  string low = DoubleToString(iLow(sym, period, SHIFT), DIGITS);
+  string close = DoubleToString(iClose(sym, period, SHIFT), DIGITS);
 
   // Append the current bar data to the CSV file
   FileWrite(file_handle, time, open, high, low, close);
