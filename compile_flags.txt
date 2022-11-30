@@ -1,0 +1,4 @@
+-Imql5/Include
+-std=c++20
+-xc++
+-Wno-write-strings

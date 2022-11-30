@@ -1,0 +1,3 @@
+[submodule "mql5"]
+	path = mql5
+	url = https://github.com/mskelton/mql5
