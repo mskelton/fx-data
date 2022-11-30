@@ -46,5 +46,5 @@ void OnTick() {
   double close = iClose(sym, period, 0);
 
   // Append the current bar data to the CSV file
-  FileWrite(file_handle, time, open, high, low, close)
+  FileWrite(file_handle, time, open, high, low, close);
 }
