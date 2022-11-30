@@ -18,7 +18,7 @@
 int file_handle;
 
 int OnInit() {
-  file_handle = FileOpen("AUDUSD.csv", FILE_WRITE | FILE_CSV, ',');
+  file_handle = FileOpen(Symbol() + ".csv", FILE_WRITE | FILE_CSV, ',');
   FileWrite(file_handle, "time", "open", "high", "low", "close");
 
   return INIT_SUCCEEDED;
